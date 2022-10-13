@@ -1,0 +1,22 @@
+<table id='t_correos' name='t_correos' class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Asunto</th> <!-- th pondra los encabezados en negrita-->
+            <th>Mensaje</th>
+            <th>Fecha / Hora</th>
+            <th>Destinatario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- con este bucle pintaremos lo que haya en la BBDD-->
+        {%for c in listaCorreos%}
+        <tr>
+            <td>{{c["asunto"]}}</td> <!-- td para el contenido que NO ira en negrita-->
+            <td>{{c["mensaje"]}}</td>
+            <td>{{c["fecha"]}} / {{c["hora"]}}</td>
+            <td>{{c["nombreusuario"]}}</td>
+        </tr>
+
+        {%endfor%}
+    </tbody>
+</table>
